@@ -1,4 +1,8 @@
 <?php 
+//在分支dev上的修改
+/**
+ * 我的调试类
+ */
 class OutUtil {
     public static function ec( $data,$isExit=true ) {
         echo $data;
