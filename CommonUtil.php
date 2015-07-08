@@ -1,4 +1,5 @@
 <?php 
+//在master分支上的修改
 class OutUtil {
     public static function ec( $data,$isExit=true ) {
         echo $data;
