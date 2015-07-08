@@ -1,0 +1,35 @@
+[user]
+	email = 1094740701@qq.com
+	name = ddcoder
+[alias]
+    st = status
+    ci = commit
+    co = checkout
+    br = branch
+    au = add -u
+    diffc = diff --cached
+    cdiff = diff --color-words
+    desc = describe
+    lo = log --pretty=oneline
+    lg = log --graph
+    lp = log -p
+    ln = log --name-status
+    ld = log --decorate
+[color]
+    ui = auto
+[core]
+    editor = vim
+    ignore = pyc
+    excludesfile = /etc/gitignore
+    quotepath = false
+[push]
+    default = upstream
+[merge]
+    tool = extMerge
+[mergetool "extMerge"]
+    cmd = extMerge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
+    trustExitCode = false
+#[http]
+#    sslVerify = false
+#[https]
+#    proxy = 127.0.0.1:8087
