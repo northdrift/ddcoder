@@ -11,10 +11,13 @@
     cdiff = diff --color-words
     desc = describe
     lo = log --pretty=oneline
-    lg = log --graph
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    ls = log --abbrev-commit --pretty=oneline --graph
     lp = log -p
     ln = log --name-status
     ld = log --decorate
+    unstage = reset HEAD
+    last = log -1
 [color]
     ui = auto
 [core]
