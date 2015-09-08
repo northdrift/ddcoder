@@ -1,0 +1,51 @@
+<!--三成结构实现横向滚动，其中最内层的元素不能使用float:left;因为浮动的话一遇到容器边缘就会换行，这个时候使用white-space:nowrap也是不起作用的,除非父容器宽度足够-->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <style>
+    .clearfxi:after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+    div {
+        position: relative;
+        width: 100%;
+        overflow-x: auto;
+    }
+    ul {
+        float: left;
+        height: 40px;
+        padding: 0;
+        overflow-y: hidden;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    ul li {
+        display: inline-block;
+        height: 100%;
+        width: 100px;
+        border: 1px solid;
+        border-right: 0;
+    }
+    </style>
+</head>
+<body>
+<div>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+        <li>11</li>
+    </ul>
+</div>
+</body>
+</html>
