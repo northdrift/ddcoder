@@ -1,0 +1,77 @@
+<style>
+#confirm-modal {
+    position: absolute;
+    z-index: 360;
+    background-color: rgba(0,0,0,.5);
+    height: 100%;
+    width: 100%;
+}
+#confirm {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%,-50%);     IE 9
+    -moz-transform: translate(-50%,-50%);    Firefox
+    -webkit-transform: translate(-50%,-50%);  Safari 和 Chrome
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    background-color: #fff;
+
+    width: 200px;
+    padding: 20px;
+    border-radius: 4px;
+
+}
+#confirm-title {
+    margin: 15px 0;
+}
+#confirm-option {
+    display: table;
+    width: 100%;
+}
+#confirm-option .item {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    color: #fff;
+}
+#confirm-option .item.yes {
+    padding-right: 5px;
+}
+#confirm-option .item.no {
+    padding-left: 5px;
+}
+.btn {
+    display: block;
+    width: 100%;
+    padding: 3px 0;
+}
+.btn-success {
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+.btn-danger {
+    background-color: #d9534f;
+    border-color: #d43f3a;
+}
+
+</style>
+<script>
+
+function MyConfirm( title,okFunc ) {
+    var confirmHtml = '<div id="confirm-modal"> ' +
+        '<div id="confirm"> ' +
+        '<p id="confirm-title">'+ title +'？</p> ' +
+        '<div id="confirm-option"> ' +
+        '<div class="item yes" onclick="okFunc()"> ' +
+        '<span class="btn btn-success">确定 </span> ' +
+        '</div> ' +
+        '<div class="item no" onclick="return false"> ' +
+        '<span class="btn btn-danger">取消</span> ' +
+        '</div> ' +
+        '</div> ' +
+        '</div> ' +
+        '</div>';
+    $("body").prepend(confirmHtml);
+}
+</script>
