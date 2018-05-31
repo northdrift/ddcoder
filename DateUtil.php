@@ -33,4 +33,21 @@ class DateUtil {
         $lastDay = date('Y-m-d',strtotime('last day next week'));
         echo  $lastDay;
     }
+
+    /**
+     * @author ddcoder
+     * @desc 获取,$start - $end 的连续日期
+     * @param $start 开始日期,如: 2017-06-10
+     * @param $end 结束日期,如: 2017-06-21
+     * @return array
+     */
+    public static function rangeDate($start, $end) {
+        $ret = [];
+        for($day = $start; $day <= $end;) {
+            $ret[] = $day;
+            $day = date('Y-m-d', strtotime($day) + 3600 * 24);
+        }
+        return $ret;
+    }
+
 }   
